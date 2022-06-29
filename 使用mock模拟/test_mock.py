@@ -59,4 +59,17 @@ from unittest.mock import patch
 #
 #1. 模拟函数调用
 #2.记录在对象上的方法调用
+# 两种mock的方法
+#第二种增加了mock的函数和mock文件，并在mock文件中，增加了mock的基类，后面具体的mock生效的子类继承基类后。就直接返回IE过操作后的结果。达到了mock的目的
+class Test(unittest.TestCase):
+
+    @patch.object(Mock_class, "mock_function")
+    def test_(self,mock_function):
+        print(inspect.currentframe().f_code.co_name)
+        _input = ""
+        _input.update(_function)
+        mock_function(_input).side_effect = self.mock_function
+
+    def mock_mock_function(self, req, context=None):
+        return  m_mock.MockCreate()
 
